@@ -5,7 +5,7 @@ from setuptools import setup
 setup(
     name='AoikProjectStart',
 
-    version='0.1',
+    version='0.2',
 
     description="""Start code for Python project. Best practices cover package bootstrap, argument parsing, and error handling.""",
 
@@ -49,7 +49,7 @@ setup(
 
     entry_points={
         'console_scripts': [
-            'aoikprojectstart=aoikprojectstart.aoikprojectstart:main',
+            'aoikprojectstart=aoikprojectstart.main.aoikprojectstart:main',
         ],
     },
 )

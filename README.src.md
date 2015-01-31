@@ -10,14 +10,7 @@ Tested working with:
 - Python 2.7, 3.2+
 
 ## Table of Contents
-- [Setup](#setup)
-  - [Setup via pip](#setup-via-pip)
-  - [Setup via git](#setup-via-git)
-  - [Find entry program](#find-entry-program)
-- [Best Practices](#best-practices)
-  - [Package bootstrap](#package-bootstrap)
-  - [Argument parsing](#argument-parsing)
-  - [Error handling](#error-handling)
+[:TOC:]
 
 ## Setup
 
