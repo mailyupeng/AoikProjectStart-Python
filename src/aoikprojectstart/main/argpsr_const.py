@@ -1,6 +1,7 @@
 # coding: utf-8
 from __future__ import absolute_import
-import itertools
+from aoikargutil import SPEC_DI_K_ONE
+from aoikargutil import SPEC_DI_K_TWO
 
 #/
 ARG_HELP_ON_F = '-h'
@@ -34,7 +35,7 @@ ARG_POSITIVE_MUL2_H = 'Multiply the positive integer by 2.'
 ARG_FUNC_URI_F = '-f'
 ARG_FUNC_URI_K = '3cInTiI'
 ARG_FUNC_URI_V = 'FUNC_URI'
-ARG_FUNC_URI_H = 'Function to call.'
+ARG_FUNC_URI_H = 'Call a function.'
 
 #/
 ARG_OUTPUT_F = '-o'
@@ -57,27 +58,19 @@ ARG_VER_ON_A = 'store_true'
 ARG_VER_ON_H = 'Show version.'
 
 #/
-## |EXC| means mutual exclusive
-ARG_EXC_PAIR_S = list(itertools.combinations([
-    ARG_VER_ON_F,
-    ARG_NEGATIVE_F,
-    ARG_POSITIVE_F,
-], 2))
-
-#/
-## |REQ_ONE| means requires one of them
-ARG_REQ_ONE_S = [
-    ARG_HELP_ON_F,
-    ARG_HELP_ON_F2,
-    ARG_VER_ON_F,
-    ARG_NEGATIVE_F,
-    ARG_POSITIVE_F,
-]
-
-#/
-## |REQ_PAIR| means one requires another
-ARG_REQ_PAIR_S = [
-    (ARG_NEGATIVE_MUL2_F, ARG_NEGATIVE_F),
-    (ARG_POSITIVE_MUL2_F, ARG_POSITIVE_F),
-    (ARG_OUTPUT_F, (ARG_NEGATIVE_F, ARG_POSITIVE_F)),
-]
+ARG_SPEC = {
+    SPEC_DI_K_ONE: (
+        ARG_HELP_ON_F,
+        ARG_HELP_ON_F2,
+        ARG_VER_ON_F,
+        #/ 2kqbBro
+        ARG_NEGATIVE_F,
+        ARG_POSITIVE_F,
+        ARG_FUNC_URI_F,
+    ),
+    SPEC_DI_K_TWO: [
+        (ARG_NEGATIVE_MUL2_F, ARG_NEGATIVE_F),
+        (ARG_POSITIVE_MUL2_F, ARG_POSITIVE_F),
+        (ARG_OUTPUT_F, [ARG_NEGATIVE_F, ARG_POSITIVE_F, ARG_FUNC_URI_F]),
+    ]
+}
